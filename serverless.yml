@@ -1,0 +1,22 @@
+service: serverless-aws-typescript-nestjs
+
+plugins:
+  - serverless-plugin-typescript
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+  region: eu-west-1
+
+  stage: ${opt:stage, 'dev'}
+
+  memorySize: 128
+
+functions:
+
+  www:
+    handler: src/handler.index
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
