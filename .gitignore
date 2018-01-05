@@ -1,0 +1,11 @@
+.idea
+
+# package directories
+node_modules
+jspm_packages
+yarn.lock
+yarn-error.log
+
+# Serverless directories
+.build
+.serverless
